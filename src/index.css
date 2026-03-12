@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background-color: #0a0b0d;
+  --card-bg: #111827;
+  --border-color: #201b4e;
+  --primary-orange: #fe7901;
+  --glow-orange: #FF8A3D;
+  --text-primary: #ffffff;
+  --text-secondary: #9698e2;
+}
+
+body {
+  @apply bg-[var(--background-color)] text-[var(--text-primary)] font-sans antialiased;
+  margin: 0;
+}
+
+.glass-card {
+  background: rgba(17, 24, 39, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.orange-glow {
+  @apply text-[var(--primary-orange)] drop-shadow-[0_0_10px_var(--glow-orange)];
+}
+
+.hover-glow:hover {
+  @apply shadow-[0_0_20px_rgba(254,121,1,0.5)] transition-all duration-300;
+}
+
+/* Modal backdrop like OP_NET */
+.wallet-backdrop {
+  @apply fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center;
+}
